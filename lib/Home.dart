@@ -1,28 +1,32 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:ui';
+
+import 'package:dating_app/NavDrawer.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _Home createState() => _Home();
 }
 
-class _HomeState extends State<Home> {
+class _Home extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Splash Screen"),
+        title: Text("Home"),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Welcome",
-              style: TextStyle(fontSize: 22.0),
-            ),
-          ],
-        ),
+      drawer: Drawer(
+        child: NavDrawer(),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+              child: Text(
+            "Welcome",
+            style: TextStyle(fontSize: 22.0),
+          )),
+        ],
       ),
     );
   }
